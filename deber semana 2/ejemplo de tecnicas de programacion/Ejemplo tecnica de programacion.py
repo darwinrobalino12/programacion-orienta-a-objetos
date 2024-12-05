@@ -14,9 +14,9 @@ class Personaje:
         print("·Vida:", self.vida)
 
     def subir_nivel(self, fuerza, inteligencia, defensa):
-        self.fuerza = self.fuerza + fuerza
-        self.inteligencia = self.inteligencia + inteligencia
-        self.defensa = self.defensa + defensa
+        self.fuerza += fuerza
+        self.inteligencia += inteligencia
+        self.defensa += defensa
 
     def esta_vivo(self):
         return self.vida > 0
@@ -30,7 +30,7 @@ class Personaje:
 
     def atacar(self, enemigo):
         daño = self.daño(enemigo)
-        enemigo.vida = enemigo.vida - daño
+        enemigo.vida -= daño
         print(self.nombre, "ha realizado", daño, "puntos de daño a", enemigo.nombre)
         if enemigo.esta_vivo():
             print("Vida de", enemigo.nombre, "es", enemigo.vida)
@@ -38,39 +38,43 @@ class Personaje:
             enemigo.morir()
 
 
-class Guerrero(Personaje):
-    def __init__(self, nombre, fuerza, inteligencia, defensa, vida, espada):
+class GuerreroModerno(Personaje):
+    def __init__(self, nombre, fuerza, inteligencia, defensa, vida, arma, chaleco):
         super().__init__(nombre, fuerza, inteligencia, defensa, vida)
-        self.espada = espada
+        self.arma = arma
+        self.chaleco = chaleco
 
     def cambiar_arma(self):
-        opcion = int(input("Elige un arma: (1) Acero Valyrio, daño 8. (2) Matadragones, daño 10"))
+        opcion = int(input("Elige un arma: (1) Pistola, daño 10. (2) Bazuca, daño 30."))
         if opcion == 1:
-            self.espada = 8
+            self.arma = 10
         elif opcion == 2:
-            self.espada = 10
+            self.arma = 30
         else:
             print("Número de arma incorrecta")
 
     def atributos(self):
         super().atributos()
-        print("·Espada:", self.espada)
+        print("·Arma:", "Pistola" if self.arma == 10 else "Bazuca" if self.arma == 30 else "No definida")
+        print("·Chaleco antibalas:", self.chaleco)
 
     def daño(self, enemigo):
-        return self.fuerza * self.espada - enemigo.defensa
+        return self.fuerza * self.arma - enemigo.defensa * self.chaleco
 
 
-class Mago(Personaje):
-    def __init__(self, nombre, fuerza, inteligencia, defensa, vida, libro):
+class GuerreroDefensivo(Personaje):
+    def __init__(self, nombre, fuerza, inteligencia, defensa, vida, arma, chaleco):
         super().__init__(nombre, fuerza, inteligencia, defensa, vida)
-        self.libro = libro
+        self.arma = arma
+        self.chaleco = chaleco
 
     def atributos(self):
         super().atributos()
-        print("·Libro:", self.libro)
+        print("·Arma:", "Pistola" if self.arma == 10 else "Bazuca" if self.arma == 30 else "No definida")
+        print("·Chaleco antibalas:", self.chaleco)
 
     def daño(self, enemigo):
-        return self.inteligencia * self.libro - enemigo.defensa
+        return self.fuerza * self.arma - (enemigo.defensa * self.chaleco)
 
 
 def combate(jugador_1, jugador_2):
@@ -79,9 +83,11 @@ def combate(jugador_1, jugador_2):
         print("\nTurno", turno)
         print(">>> Acción de ", jugador_1.nombre, ":", sep="")
         jugador_1.atacar(jugador_2)
-        print(">>> Acción de ", jugador_2.nombre, ":", sep="")
+        if not jugador_2.esta_vivo():
+            break
+        print(">>> Acción de ", jugador_2.nombre, ":", sep="")  # Nueva ronda para el otro jugador
         jugador_2.atacar(jugador_1)
-        turno = turno + 1
+        turno += 1
     if jugador_1.esta_vivo():
         print("\nHa ganado", jugador_1.nombre)
     elif jugador_2.esta_vivo():
@@ -90,12 +96,11 @@ def combate(jugador_1, jugador_2):
         print("\nEmpate")
 
 
-personaje_1 = Guerrero("Guts", 20, 10, 4, 100, 4)
-personaje_2 = Mago("Vanessa", 5, 15, 4, 100, 3)
+# Creación de los personajes con armas modernas y chalecos antibalas
+personaje_1 = GuerreroModerno("Bryan", 15, 8, 6, 120, 10, 1)  # Bryan con pistola (daño 10) y chaleco antibalas
+personaje_2 = GuerreroDefensivo("Kimberly", 12, 9, 8, 110, 30, 1)  # Kimberly con bazuca (daño 30) y chaleco antibalas
 
 personaje_1.atributos()
 personaje_2.atributos()
 
 combate(personaje_1, personaje_2)
-
-
