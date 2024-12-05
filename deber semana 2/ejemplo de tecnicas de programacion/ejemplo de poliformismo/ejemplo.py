@@ -6,3 +6,4 @@ class GuerreroMagico(Personaje):
     def daño(self, enemigo):
         # Implementación polimórfica del daño, usando magia en vez de fuerza
         return self.magia * 3 - enemigo.defensa
+
