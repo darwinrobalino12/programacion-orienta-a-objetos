@@ -1,4 +1,3 @@
-# poliformismo
 class GuerreroMagico(Personaje):
     def __init__(self, nombre, fuerza, inteligencia, defensa, vida, magia):
         super().__init__(nombre, fuerza, inteligencia, defensa, vida)
