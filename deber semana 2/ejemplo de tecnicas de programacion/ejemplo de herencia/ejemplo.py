@@ -1,3 +1,5 @@
+hherencia
+
 class Mago(Personaje):
     def __init__(self, nombre, fuerza, inteligencia, defensa, vida, mana):
         super().__init__(nombre, fuerza, inteligencia, defensa, vida)
