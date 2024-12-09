@@ -1,7 +1,7 @@
 # Programación Tradicional
 # Función para ingresar las temperaturas diarias durante la semana
 def ingresar_temperaturas():
-    """Función para ingresar las temperaturas de cada día de la semana."""
+
     temperaturas = []
     for dia in range(1, 8):
         temperatura = float(input(f"Ingrese la temperatura del día tomada al mismo horario {dia}: "))
@@ -15,7 +15,7 @@ def calcular_promedio(temperaturas):
 
 # Función que ejecuta el programa
 def main():
-    """Función principal del programa."""
+
     print("Ingrese las temperaturas diarias durante una semana:")
     temperaturas = ingresar_temperaturas()
     promedio = calcular_promedio(temperaturas)
