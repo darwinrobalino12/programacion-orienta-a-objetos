@@ -23,3 +23,4 @@ persona.saludar()
 persona2.saludar()
 #imprimir
 print(persona.nombre)
+
