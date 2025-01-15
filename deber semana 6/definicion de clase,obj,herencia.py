@@ -23,5 +23,5 @@ vehiculo = Vehiculo("Toyota", "4runner")
 moto = Motocicleta("Honda", "crf230", 125)
 
 # Mostramos las descripciones
-print(vehiculo.describir())  # Salida: Vehículo marca Toyota, modelo Corolla
-print(moto.describir())      # Salida: Motocicleta marca Harley Davidson, modelo Sportster, velocidad máxima 200 km/h
+print(vehiculo.describir())  # Salida: Vehículo marca Toyota, modelo 4runner
+print(moto.describir())      # Salida: Motocicleta marca Honda, modelo crf230, velocidad máxima 125 km/h
