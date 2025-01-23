@@ -31,5 +31,3 @@ if __name__ == "__main__":
 
     # Fin del programa: Aquí se activará automáticamente el destructor para los objetos restantes.
     print("Fin del programa.")
-
-
