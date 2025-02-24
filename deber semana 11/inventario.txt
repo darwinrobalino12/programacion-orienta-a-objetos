@@ -1,0 +1,5 @@
+1,celular1,7,100.0
+2,celular 2,4,150.0
+3,cargador,5,5.0
+4,audifono,8,2.0
+3,celular 3,5,125.0
