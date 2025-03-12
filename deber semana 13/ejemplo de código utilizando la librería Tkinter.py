@@ -75,3 +75,5 @@ etiqueta_imagen.pack(pady=10)
 # Iniciar el bucle de eventos
 ventana.mainloop()
 
+
+
