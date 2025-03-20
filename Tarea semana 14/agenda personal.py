@@ -105,3 +105,4 @@ def cargar_eventos():
 cargar_eventos()  # Cargamos los eventos al iniciar la aplicación
 
 ventana.mainloop()  # Iniciamos el bucle principal de la aplicación
+
