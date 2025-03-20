@@ -1,6 +1,6 @@
 import tkinter as tk  # Importamos la librería tkinter
-from tkinter import ttk  # Importamos ttk (Themed Tkinter) para componentes con mejor apariencia
-from tkcalendar import DateEntry  # Importamos DateEntry de tkcalendar s
+from tkinter import ttk  # Importamos ttk (Themed Tkinter)
+from tkcalendar import DateEntry  # Importamos DateEntry de tkcalendar
 import os  # Importamos el módulo os para trabajar con archivos
 
 # Creamos la ventana principal de la aplicación
