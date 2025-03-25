@@ -36,7 +36,7 @@ def mostrar_menu():
         '16': 'deber semana 6/definicion de clase,obj,herencia.py',
         '17': 'deber semana 7/ejemplo_constructores/destructores.py',
         '18': 'semana 5/ejemplo funcionalidad.py',
-        '19': 'semana 8/Dashboard1.py',
+        '19': 'deber semana 8/Dashboard1.py',
         # Agrega aquí el resto de las rutas de los scripts
     }
 

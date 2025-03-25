@@ -39,10 +39,10 @@ def mostrar_menu():
         '1': 'deber semana 2',
         '2': 'deber semana 3',
         '3': 'deber semana 4',
-        '4': 'Semana 5',
+        '4': 'deber semana 5',
         '5': 'deber semana 6',
         '6': 'deber semana 7',
-        '7': 'semana 8',
+        '7': 'deber semana 8',
     }
 
     while True:
