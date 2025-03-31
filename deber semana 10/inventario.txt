@@ -1,0 +1,3 @@
+6a,lapiz optico,4,12.0
+1a,celular,4,150.0
+2a,cargador,5,5.0
